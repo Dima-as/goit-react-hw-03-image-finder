@@ -1,0 +1,10 @@
+.galleryItem {
+  display: flex;
+  max-height: 300px;
+  width: calc((100% - 6 * 5px) / 3);
+  margin: 5px;
+}
+// .galleryItem:nth-child(3n-1) {
+//   margin-left: 20px;
+//   margin-right: 20px;
+// }
