@@ -1,9 +1,9 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 import ImageItemGallery from "../ImageItemGallery/ImageItemGallery";
 import Modal from "../Modal/Modal";
 import s from "./ImageListGallery.module.scss";
 import Loaders from "../Loader/Loader";
-import Loader from "react-loader-spinner";
 
 class ImageListGallery extends Component {
   state = {
@@ -53,5 +53,14 @@ class ImageListGallery extends Component {
     );
   }
 }
-
+ImageListGallery.propTypes = {
+  searchImages: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      webformatURL: PropTypes.string.isRequired,
+      tags: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
+    })
+  ),
+};
 export default ImageListGallery;

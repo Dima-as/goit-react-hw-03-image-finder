@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import s from "./imageItemGallery.module.scss";
 const ImageItemGallery = ({
-  id,
   webformatURL,
   largeImageURL,
   tags,
@@ -21,5 +21,11 @@ const ImageItemGallery = ({
       </li>
     </>
   );
+};
+ImageItemGallery.propTypes = {
+  webformatURL: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  tags: PropTypes.string.isRequired,
+  handleImageClick: PropTypes.func,
 };
 export default ImageItemGallery;

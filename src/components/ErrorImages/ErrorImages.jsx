@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import errorImage from "./error.jpg";
 const ErrorImages = ({ message }) => {
   return (
@@ -6,5 +7,8 @@ const ErrorImages = ({ message }) => {
       {message}
     </div>
   );
+};
+ErrorImages.propTypes = {
+  message: PropTypes.string.isRequired,
 };
 export default ErrorImages;

@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { createPortal } from "react-dom";
-// import { ImCross } from "react-icons/im";
-import "./Modal.scss";
+import s from "./Modal.module.scss";
+import PropTypes from "prop-types";
 
 const modalRoot = document.querySelector("#modal-root");
 
@@ -24,11 +24,14 @@ class Modal extends Component {
   };
   render() {
     return createPortal(
-      <div className="Modal__backdrop" onClick={this.hendleBackdropClick}>
-        <div className="Modal__content">{this.props.children}</div>
+      <div className={s.backdrop} onClick={this.hendleBackdropClick}>
+        <div className={s.content}>{this.props.children}</div>
       </div>,
       modalRoot
     );
   }
 }
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};
 export default Modal;
